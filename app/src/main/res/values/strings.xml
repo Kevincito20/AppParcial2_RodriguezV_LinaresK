@@ -11,4 +11,6 @@
     <string name="lbl_progreso">Progreso</string>
     <string name="lbl_meta">Meta mensual</string>
     <string name="icon_meta">Tu meta</string>
+    <string name="lbl_header_metas">Mis Metas</string>
+    <string name="lbl_header_frases">Frases Motivadoras</string>
 </resources>
