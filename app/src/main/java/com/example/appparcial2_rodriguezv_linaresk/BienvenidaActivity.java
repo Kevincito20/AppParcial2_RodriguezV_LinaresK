@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appparcial2_rodriguezv_linaresk.reutilizable.Utilidades;
+
 public class BienvenidaActivity extends AppCompatActivity {
 
     EditText usuarioNombre;
@@ -20,6 +22,7 @@ public class BienvenidaActivity extends AppCompatActivity {
         }
         InicializarControles();
         ValidarUsuario();
+        Utilidades.Volver(this, R.id.imvVolver);
     }
 
     private void InicializarControles(){

@@ -8,9 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.appparcial2_rodriguezv_linaresk.reutilizable.Utilidades;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -21,6 +24,8 @@ public class MetasActivity extends AppCompatActivity {
     EditText editTextKm;
 
     Button btnGuardar;
+
+    TextView lbldistanciarecorrida;
 
 
     SharedPreferences preferences;
@@ -37,7 +42,7 @@ public class MetasActivity extends AppCompatActivity {
         inicializarControles();
         float recorridoTotal = leerRecorridoDesdeArchivo();
         setProgressbar((int) recorridoTotal, false);
-
+        Utilidades.Volver(this, R.id.imvVolver);
 
     }
 
@@ -45,6 +50,7 @@ public class MetasActivity extends AppCompatActivity {
         progressbar = (ProgressBar) findViewById(R.id.progressbar);
         editTextKm = (EditText) findViewById(R.id.editTextKm);
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
+        lbldistanciarecorrida = (TextView) findViewById(R.id.lbldistanciarecorrida);
     }
 
     private float leerRecorridoDesdeArchivo() {
@@ -84,10 +90,8 @@ public class MetasActivity extends AppCompatActivity {
     }
 
 
-
-
     //CONFIGURACION PARA EL MANEJO DEL EDITTEXT
-    public void guardarRecorrido(View view){
+    public void guardarRecorrido(View view) {
         String input = editTextKm.getText().toString();
         if (input.isEmpty()) {
             Toast.makeText(this, "Por favor ingresa una meta", Toast.LENGTH_SHORT).show();
@@ -99,6 +103,8 @@ public class MetasActivity extends AppCompatActivity {
             float metaMensual = Float.parseFloat(input);
             guardarMeta(metaMensual);
 
+
+
             Toast.makeText(this, "INFORMACIÓN ALMACENADA", Toast.LENGTH_LONG).show();
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Por favor ingresa un número válido", Toast.LENGTH_SHORT).show();
@@ -106,21 +112,29 @@ public class MetasActivity extends AppCompatActivity {
     }
 
 
-    private void guardarMeta(float meta){
+    private void guardarMeta(float meta) {
 
         try {
 
 
-            SharedPreferences pref = getSharedPreferences("MetaMensual",Context.MODE_PRIVATE);
+            SharedPreferences pref = getSharedPreferences("MetaMensual", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = pref.edit();
-            editor.putFloat("Meta",meta);
-            editor.commit();
+            editor.putFloat("Meta", meta);
+            editor.apply();
 
-        }catch (Exception e){
-            Toast.makeText(getApplicationContext(),"Error al almacenar Meta mensual",Toast.LENGTH_LONG).show();
+            lbldistanciarecorrida.setText( "0 /"+meta + " km");
+
+
+
+
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Error al almacenar Meta mensual", Toast.LENGTH_LONG).show();
 
         }
     }
+
+
+
 
 
 
