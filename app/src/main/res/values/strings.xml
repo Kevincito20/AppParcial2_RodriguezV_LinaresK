@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AppParcial2_RodriguezV_LinaresK</string>
+    <string name="nombreApp">RunTrack</string>
+    <string name="lbl_frases">Ver Frases motivadoras</string>
+    <string name="lbl_historal">Ver Historial</string>
+    <string name="lbl_metas">Ver Metas</string>
+    <string name="lbl_registar">Registar Entrenamiento</string>
+    <string name="lbl_slogan">Tu compañero de carrera personal</string>
+    <string name="txt_nombre">Ingrese su nombre</string>
+    <string name="btn_empezar">EMPEZAR</string>
+    <string name="lbl_progreso">Progreso</string>
+    <string name="lbl_meta">Meta mensual</string>
+    <string name="icon_meta">Tu meta</string>
+</resources>

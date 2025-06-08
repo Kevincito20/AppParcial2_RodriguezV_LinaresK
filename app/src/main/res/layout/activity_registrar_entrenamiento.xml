@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo"
+    tools:context=".RegistrarEntrenamientoActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rlHeaderRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/azul_head"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/imvVolver"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/volver"
+            android:contentDescription="volver"
+            android:layout_alignParentStart="true"
+            android:clickable="true"
+            android:focusable="true"
+            />
+
+        <TextView
+            android:id="@+id/lbltituloSeccionRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imvVolver"
+            android:layout_marginStart="12dp"
+            android:text="@string/lbl_registar"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fecha:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <DatePicker
+                android:id="@+id/dtp_FechaEntrenamiento"
+                android:layout_width="match_parent"
+                android:layout_height="141dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Distancia:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtDistanciaRecorridaEntrenamiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="0.00"
+                android:importantForAutofill="no"
+                android:background="@drawable/background_txtregistrar"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiempo:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtTiempoEntrenamiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="0"
+                android:importantForAutofill="no"
+                android:background="@drawable/background_txtregistrar"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo de entrenamiento:"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/spnTipoEntrenamiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_txtregistrar"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar"
+                android:onClick="GuardarEntrenamiento"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
