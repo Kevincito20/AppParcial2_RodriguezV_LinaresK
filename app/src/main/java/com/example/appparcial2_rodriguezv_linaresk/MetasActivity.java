@@ -30,9 +30,14 @@ public class MetasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metas);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         inicializarControles();
         float recorridoTotal = leerRecorridoDesdeArchivo();
         setProgressbar((int) recorridoTotal, false);
+
 
     }
 

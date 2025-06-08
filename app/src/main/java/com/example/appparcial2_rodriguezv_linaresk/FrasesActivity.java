@@ -25,6 +25,9 @@ public class FrasesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frases);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         inicializarControles();
 
     }
