@@ -1,14 +1,11 @@
 package com.example.appparcial2_rodriguezv_linaresk;
 
-import android.content.Intent;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.appparcial2_rodriguezv_linaresk.reutilizable.Utilidades;
 
 public class InicioActivity extends AppCompatActivity {
@@ -19,10 +16,14 @@ public class InicioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         setContentView(R.layout.activity_inicio);
         InicializarControles();
         MapearNombre();
         cambiarPantalla();
+
     }
 
     private void InicializarControles(){
