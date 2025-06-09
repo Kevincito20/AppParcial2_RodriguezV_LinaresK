@@ -65,42 +65,86 @@
                 android:layout_height="141dp" />
 
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Distancia:"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/txtDistanciaRecorridaEntrenamiento"
+                <TextView
+                    android:id="@+id/lblTituloDistancia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Distancia:"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="4dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        style="@style/Input_Diseño"
+                        android:id="@+id/txtDistanciaRecorrida"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:hint="0"
+                        android:drawableStart="@drawable/objetivo"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="km"
+                        android:textColor="@color/black"
+                        android:layout_alignBottom="@id/txtDistanciaRecorrida"
+                        android:layout_alignEnd="@id/txtDistanciaRecorrida"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="16dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:hint="0.00"
-                android:importantForAutofill="no"
-                android:background="@drawable/background_txtregistrar"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp" />
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tiempo:"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="4dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tiempo:"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/txtTiempoEntrenamiento"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="0"
-                android:importantForAutofill="no"
-                android:background="@drawable/background_txtregistrar"
-                android:padding="12dp"
-                android:layout_marginBottom="12dp" />
+                    <EditText
+                        style="@style/Input_Diseño"
+                        android:id="@+id/txtTiempoEntrenamiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:hint="0"
+                        android:drawableStart="@drawable/objetivo"
+                        android:layout_marginBottom="12dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Minutos"
+                        android:textColor="@color/black"
+                        android:layout_alignBottom="@id/txtTiempoEntrenamiento"
+                        android:layout_alignEnd="@id/txtTiempoEntrenamiento"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="16dp"/>
+                </RelativeLayout>
+            </LinearLayout>
 
 
             <TextView

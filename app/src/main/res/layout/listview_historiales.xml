@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/background_historial"
+    >
 
     <RelativeLayout
         android:id="@+id/encabezadoHistorial"
@@ -21,7 +23,6 @@
             android:id="@+id/lblTipoE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fondo"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@android:color/black"
@@ -32,7 +33,6 @@
             android:id="@+id/lblFechaE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="dom, 14 ene"
             android:textSize="14sp"
             android:textColor="@android:color/darker_gray"
             android:layout_below="@+id/lblTipoE"
@@ -43,7 +43,6 @@
             android:id="@+id/lblRitmoE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5:18/km"
             android:textSize="16sp"
             android:textColor="#6366F1"
             android:layout_alignParentEnd="true"
@@ -76,7 +75,7 @@
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/objetivo" />
+                    android:src="@drawable/baseline_timeline_24" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -92,8 +91,7 @@
                 android:id="@+id/lbldistanciarecorrida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8.5"
-                android:textSize="32sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"/>
 
@@ -123,7 +121,7 @@
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/objetivo"/>
+                    android:src="@drawable/baseline_access_time_24"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -139,8 +137,7 @@
                 android:id="@+id/lbltiempo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="45"
-                android:textSize="32sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"/>
 
@@ -170,7 +167,7 @@
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="16dp"
-                    android:src="@drawable/objetivo" />
+                    android:src="@drawable/ritmo" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -186,8 +183,7 @@
                 android:id="@+id/lblritmo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5:18"
-                android:textSize="32sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"/>
 
