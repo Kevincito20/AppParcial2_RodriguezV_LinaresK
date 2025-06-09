@@ -1,9 +1,14 @@
 package com.example.appparcial2_rodriguezv_linaresk;
 
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -22,7 +27,7 @@ public class FrasesActivity extends AppCompatActivity {
 
 
     TextView textViewFrase;
-
+    Button btnfrases;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +37,14 @@ public class FrasesActivity extends AppCompatActivity {
         }
         inicializarControles();
         Utilidades.Volver(this, R.id.imvVolver);
+
+        hover(btnfrases,"#f97316","#ea580c","white");
     }
 
 
     private void inicializarControles(){
         textViewFrase = (TextView) findViewById(R.id.textViewFrase);
-
+        btnfrases = (Button) findViewById(R.id.btnfrases);
     }
     public void desplegarInformacion(View view){
         Dialog dialog = new Dialog(FrasesActivity.this);
@@ -76,6 +83,29 @@ public class FrasesActivity extends AppCompatActivity {
 
         return frases;
     }
+
+
+    public void hover(View view, String colorNormal, String colorSeleccionado, String colorTexto) {
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        v.setBackgroundColor(Color.parseColor(colorSeleccionado));
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        v.setBackgroundColor(Color.parseColor(colorNormal));
+                        v.performClick(); // Para evitar advertencias
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        v.setBackgroundColor(Color.parseColor(colorTexto));
+                        break;
+                }
+                return true;
+            }
+        });
+    }
+
 
 
 }

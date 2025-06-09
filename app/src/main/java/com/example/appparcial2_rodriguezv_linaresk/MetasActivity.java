@@ -107,8 +107,7 @@ public class MetasActivity extends AppCompatActivity {
             Toast.makeText(this, "Por favor ingresa un número válido", Toast.LENGTH_SHORT).show();
         }
     }
-
-
+    
     private void guardarMeta(float meta) {
 
         try {
