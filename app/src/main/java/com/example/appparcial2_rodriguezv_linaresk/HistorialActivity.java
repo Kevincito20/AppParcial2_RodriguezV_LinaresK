@@ -7,6 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.appparcial2_rodriguezv_linaresk.adaptadores.EntrenamientosListviewAdapter;
 import com.example.appparcial2_rodriguezv_linaresk.entidades.Entrenamiento;
+import com.example.appparcial2_rodriguezv_linaresk.reutilizable.Utilidades;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -27,6 +28,7 @@ public class HistorialActivity extends AppCompatActivity {
         }
         InicializarControles();
         MostrarEstadisticasGenerales();
+        Utilidades.Volver(this, R.id.imvVolver);
     }
 
     private void InicializarControles(){

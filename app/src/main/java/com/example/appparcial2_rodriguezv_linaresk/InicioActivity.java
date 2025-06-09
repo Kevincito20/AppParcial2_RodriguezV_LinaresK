@@ -23,7 +23,7 @@ public class InicioActivity extends AppCompatActivity {
         InicializarControles();
         MapearNombre();
         cambiarPantalla();
-
+        Utilidades.Volver(this, R.id.imvVolver);
     }
 
     private void InicializarControles(){

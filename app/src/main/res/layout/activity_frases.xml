@@ -3,14 +3,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    >
 
+
+
+    <RelativeLayout
+        android:id="@+id/rlHeaderRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange_boton"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/imvVolver"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/volver"
+            android:contentDescription="volver"
+            android:layout_alignParentStart="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:id="@+id/lbltituloSeccionRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imvVolver"
+            android:layout_marginStart="12pt"
+            android:text="@string/lbl_header_frases"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="8pt"
+
+            />
+
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        />
+        android:layout_height="483dp"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/btnfrases"
@@ -18,7 +52,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="NUEVA FRASE"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/orange_boton"
         android:textStyle="bold"
         android:padding="4dp"
         android:layout_marginTop="16dp"

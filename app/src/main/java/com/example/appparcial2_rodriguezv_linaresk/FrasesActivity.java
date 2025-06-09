@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.appparcial2_rodriguezv_linaresk.reutilizable.Utilidades;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +31,7 @@ public class FrasesActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         inicializarControles();
-
+        Utilidades.Volver(this, R.id.imvVolver);
     }
 
 
