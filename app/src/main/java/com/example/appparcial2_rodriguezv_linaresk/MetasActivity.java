@@ -125,8 +125,6 @@ public class MetasActivity extends AppCompatActivity {
             lbldistanciarecorrida.setText( "0 /"+meta + " km");
 
 
-
-
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "Error al almacenar Meta mensual", Toast.LENGTH_LONG).show();
 

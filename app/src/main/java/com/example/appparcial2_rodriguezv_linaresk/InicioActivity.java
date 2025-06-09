@@ -13,6 +13,8 @@ public class InicioActivity extends AppCompatActivity {
     TextView lblNombre;
     RelativeLayout btnRegistrar, btnHistorial, btnMetas, btnFrases;
 
+    FrasesActivity obj = new FrasesActivity();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,14 @@ public class InicioActivity extends AppCompatActivity {
         MapearNombre();
         cambiarPantalla();
         Utilidades.Volver(this, R.id.imvVolver);
+
+        obj.hover(btnRegistrar,"#2563eb","#1d4ed8","white");
+        obj.hover(btnHistorial,"#16a34a","#15803d","white");
+
+        obj.hover(btnMetas,"#a855f7","#7c3aed","white");
+        obj.hover(btnFrases,"#f97316","#ea580c","white");
+
+
     }
 
     private void InicializarControles(){
@@ -45,6 +55,8 @@ public class InicioActivity extends AppCompatActivity {
         Utilidades.Botones(btnHistorial,this,HistorialActivity.class);
         Utilidades.Botones(btnMetas,this,MetasActivity.class);
     }
+
+
 
 
 }
