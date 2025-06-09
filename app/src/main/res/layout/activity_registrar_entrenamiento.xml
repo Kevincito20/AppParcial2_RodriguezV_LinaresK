@@ -62,7 +62,9 @@
             <DatePicker
                 android:id="@+id/dtp_FechaEntrenamiento"
                 android:layout_width="match_parent"
-                android:layout_height="141dp" />
+                android:layout_height="131dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner" />
 
 
             <LinearLayout

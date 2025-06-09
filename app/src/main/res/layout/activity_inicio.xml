@@ -12,149 +12,201 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="@color/azul_head"
+        android:background="@drawable/header_inicio"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:paddingBottom="32dp">
+        android:padding="24dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp">
+            android:text="@string/nombreApp"
+            android:textSize="12pt"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:text="@string/nombreApp"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/lblNombreUsuario"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/lblNombreUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:layout_marginBottom="8dp" />
-
-        </LinearLayout>
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="20sp" />
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="24dp"
-        android:layout_below="@+id/header">
+        android:layout_below="@+id/header"
+        android:layout_marginTop="-48dp"
+        android:padding="24dp">
 
-
-        <RelativeLayout
-            android:id="@+id/progeso"
+        <FrameLayout
+            android:id="@+id/contenedorProgreso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:padding="20dp"
-            android:layout_marginBottom="24dp"
-            android:elevation="2dp"
-            android:background="@color/white">
+            android:layout_marginBottom="24dp">
 
-            <LinearLayout
+
+            <RelativeLayout
+                android:id="@+id/progresoMensual"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_toStartOf="@id/targetIcon"
-                android:layout_centerVertical="true">
+                android:background="@drawable/card_progreso_inicio"
+                android:padding="20dp"
+                android:visibility="gone">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/lbl_meta"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/black"/>
-
-                <TextView
-                    android:id="@+id/lblDistanciaMeta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textColor="@android:color/black"
-                    android:layout_marginTop="4dp"/>
-
-                <TextView
-                    android:id="@+id/txtProgreso"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/lbl_progreso"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/black"
-                    android:layout_marginTop="16dp"
-                    android:textStyle="bold"/>
-
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="12dp"
-                    android:layout_marginTop="8dp"
-                    android:progressDrawable="@drawable/progressbar"
-                    android:max="100"
-                    android:progress="0"/>
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_meta"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/lblDistanciaMeta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/txtProgreso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/lbl_progreso"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/lblprogresoFaltante"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/tvRemaining"
+                    android:id="@+id/PorcentajeFaltante"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/darker_gray"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp" />
 
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/IconoProgresoRestante"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@color/white"
+                    android:contentDescription="@string/icon_meta"
+                    android:padding="8dp"
+                    android:src="@drawable/objetivo" />
+            </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tvProgressPercent"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/progeso"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:layout_alignParentEnd="true"
-                android:textColor="@android:color/black"
-                android:layout_marginTop="8dp"/>
+                android:background="@drawable/card_progreso_inicio"
+                android:padding="20dp"
+                android:visibility="gone">
 
-            <ImageView
-                android:id="@+id/targetIcon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/objetivo"
-                android:background="@color/white"
-                android:padding="8dp"
-                android:contentDescription="@string/icon_meta"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/targetIcon"
+                    android:orientation="vertical">
 
-        </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lbl_meta"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/lblDistanciaMetaCompletada"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/verde_boton"
+                        android:textSize="25sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/lbLMetaCompletada"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="¡Meta completada!"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/lblprogresoCompletado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/verde_boton"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/PorcentajeCompletado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/verde_boton"
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/targetIcon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="#dcfce7"
+                    android:contentDescription="@string/icon_meta"
+                    android:padding="8dp"
+                    android:src="@drawable/trofeo" />
+            </RelativeLayout>
+
+        </FrameLayout>
 
 
         <RelativeLayout
             android:id="@+id/btnRegistrarEntrenamiento"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:layout_below="@id/progeso"
-            android:background="@color/azul_head"
-            android:padding="16dp"
+            android:layout_below="@id/contenedorProgreso"
             android:layout_marginBottom="12dp"
+            android:background="@color/azul_head"
             android:clickable="true"
+            android:elevation="2dp"
             android:focusable="true"
-            android:elevation="2dp">
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/iconAdd"
@@ -162,20 +214,20 @@
                 android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/registrar"
                 android:layout_marginEnd="12dp"
-                android:contentDescription="@string/lbl_registar"/>
+                android:contentDescription="@string/lbl_registar"
+                android:src="@drawable/registrar" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/iconAdd"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/iconAdd"
                 android:text="@string/lbl_registar"
+                android:textColor="@android:color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white" />
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -185,12 +237,12 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_below="@id/btnRegistrarEntrenamiento"
-            android:background="@color/orange_boton"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
+            android:background="@color/orange_boton"
             android:clickable="true"
+            android:elevation="2dp"
             android:focusable="true"
-            android:elevation="2dp">
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/iconLightbulb"
@@ -198,20 +250,20 @@
                 android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/comentario"
                 android:layout_marginEnd="12dp"
-                android:contentDescription="@string/lbl_frases"/>
+                android:contentDescription="@string/lbl_frases"
+                android:src="@drawable/comentario" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/iconLightbulb"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/iconLightbulb"
                 android:text="@string/lbl_frases"
+                android:textColor="@android:color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white" />
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -220,12 +272,12 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_below="@id/btnFrases"
-            android:background="@color/verde_boton"
-            android:padding="16dp"
             android:layout_marginBottom="12dp"
+            android:background="@color/verde_boton"
             android:clickable="true"
+            android:elevation="2dp"
             android:focusable="true"
-            android:elevation="2dp">
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/iconHistory"
@@ -233,20 +285,20 @@
                 android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/historial"
                 android:layout_marginEnd="12dp"
-                android:contentDescription="@string/lbl_historal"/>
+                android:contentDescription="@string/lbl_historal"
+                android:src="@drawable/historial" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/iconHistory"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/iconHistory"
                 android:text="@string/lbl_historal"
+                android:textColor="@android:color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white" />
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
@@ -256,10 +308,10 @@
             android:layout_height="56dp"
             android:layout_below="@id/btnHistorial"
             android:background="@color/purpura"
-            android:padding="16dp"
             android:clickable="true"
+            android:elevation="2dp"
             android:focusable="true"
-            android:elevation="2dp">
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/iconFlag"
@@ -267,20 +319,20 @@
                 android:layout_height="20dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
-                android:src="@drawable/objetivo"
                 android:layout_marginEnd="12dp"
-                android:contentDescription="@string/lbl_metas"/>
+                android:contentDescription="@string/lbl_metas"
+                android:src="@drawable/objetivo" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/iconFlag"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="12dp"
+                android:layout_toEndOf="@id/iconFlag"
                 android:text="@string/lbl_metas"
+                android:textColor="@android:color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white" />
+                android:textStyle="bold" />
 
         </RelativeLayout>
     </RelativeLayout>

@@ -27,9 +27,6 @@ public class MetasActivity extends AppCompatActivity {
 
     TextView lbldistanciarecorrida;
 
-
-    SharedPreferences preferences;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,54 +37,16 @@ public class MetasActivity extends AppCompatActivity {
         }
 
         inicializarControles();
-        float recorridoTotal = leerRecorridoDesdeArchivo();
-        setProgressbar((int) recorridoTotal, false);
         Utilidades.Volver(this, R.id.imvVolver);
 
     }
 
+
     private void inicializarControles() {
-        progressbar = (ProgressBar) findViewById(R.id.progressbar);
         editTextKm = (EditText) findViewById(R.id.editTextKm);
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
         lbldistanciarecorrida = (TextView) findViewById(R.id.lbldistanciarecorrida);
         MostrarMeta();
-    }
-
-    private float leerRecorridoDesdeArchivo() {
-        float sumaTotal = 0f;
-
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(openFileInput("nombreArchivo.txt")))) {
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                if (!linea.trim().isEmpty()) {
-                    try {
-                        float valor = Float.parseFloat(linea.trim());
-                        sumaTotal += valor;
-                    } catch (NumberFormatException e) {
-                        Toast.makeText(this, "Dato inválido en el archivo: " + linea, Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, "Error al leer el archivo: " + e.getMessage(), Toast.LENGTH_LONG).show();
-        }
-
-        return sumaTotal;
-    }
-
-
-    public void setProgressbar(int progreso, boolean animate) {
-        int minimo = 0;
-        int maximo = progressbar.getMax();
-
-        progreso = Math.max(minimo, Math.min(progreso, maximo));
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            progressbar.setProgress(progreso, animate);
-        } else {
-            progressbar.setProgress(progreso);
-        }
     }
 
 
@@ -107,7 +66,7 @@ public class MetasActivity extends AppCompatActivity {
             Toast.makeText(this, "Por favor ingresa un número válido", Toast.LENGTH_SHORT).show();
         }
     }
-    
+
     private void guardarMeta(float meta) {
 
         try {

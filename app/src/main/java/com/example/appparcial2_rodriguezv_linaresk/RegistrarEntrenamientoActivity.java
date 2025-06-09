@@ -88,8 +88,6 @@ public class RegistrarEntrenamientoActivity extends AppCompatActivity {
                         entrenamiento.getRitmoPromedio()
         );
 
-
-        startActivity(new Intent(getApplicationContext(), InicioActivity.class));
     }
 
     private String obtenerFecha() {
@@ -135,7 +133,7 @@ public class RegistrarEntrenamientoActivity extends AppCompatActivity {
             double min = Double.parseDouble(tiempo);
             if (km > 0) {
                 double ritmo = min / km;
-                return String.format("%.2f", ritmo);
+                return String.format("%.1f", ritmo);
             }
         } catch (NumberFormatException e) {
            e.getMessage();

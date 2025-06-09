@@ -7,22 +7,19 @@
     tools:context=".BienvenidaActivity"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="32dp">
+    android:padding="32dp"
+    android:background="@drawable/fondo_gradiante">
 
     <LinearLayout
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:gravity="center"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:lineSpacingExtra="-4dp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logoapp"/>
 
     </LinearLayout>
 
@@ -32,7 +29,7 @@
         android:text="@string/nombreApp"
         android:textSize="36sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_marginBottom="8dp" />
 
 
@@ -40,33 +37,127 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lbl_slogan"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:alpha="0.9"
-        android:layout_marginBottom="60dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"
         android:gravity="center" />
 
-    <EditText
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registra, motivate y alcanza tus metas"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="25dp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+        android:weightSum="3">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:layout_weight="1"
+        android:background="@drawable/fondo_cards_bienvenida"
+        android:layout_marginEnd="10dp">
+
+        <ImageView
+            android:id="@+id/iconoSeguimiento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/trofeo"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seguimiento"
+            android:textColor="@color/white"
+            android:layout_below="@id/iconoSeguimiento"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/fondo_cards_bienvenida"
+        android:layout_marginEnd="10dp">
+
+        <ImageView
+            android:id="@+id/iconoMetas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/trofeo"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metas"
+            android:layout_below="@id/iconoMetas"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/fondo_cards_bienvenida">
+
+        <ImageView
+            android:id="@+id/iconoMotivacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/trofeo"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Motivación"
+            android:layout_below="@id/iconoMotivacion"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+<EditText
         android:id="@+id/UsuarioNombre"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:hint="@string/txt_nombre"
+        android:textColorHint="@color/white"
         android:textSize="16sp"
         android:padding="16dp"
         android:layout_marginBottom="24dp"
         android:autofillHints="username"
         android:inputType="textPersonName"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:background="@drawable/fondo_cards_bienvenida"/>
 
     <Button
         android:id="@+id/btnEmpezar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="@string/btn_empezar"
+        android:textColor="@color/azul_head"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:elevation="2dp"
+        android:backgroundTint="@color/white"
         android:onClick="IniciarSesion"/>
 
 </LinearLayout>
+
