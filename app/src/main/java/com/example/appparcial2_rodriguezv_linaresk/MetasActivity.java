@@ -51,6 +51,7 @@ public class MetasActivity extends AppCompatActivity {
         editTextKm = (EditText) findViewById(R.id.editTextKm);
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
         lbldistanciarecorrida = (TextView) findViewById(R.id.lbldistanciarecorrida);
+        MostrarMeta();
     }
 
     private float leerRecorridoDesdeArchivo() {
@@ -97,15 +98,11 @@ public class MetasActivity extends AppCompatActivity {
             Toast.makeText(this, "Por favor ingresa una meta", Toast.LENGTH_SHORT).show();
             return;
         }
-
         try {
-
             float metaMensual = Float.parseFloat(input);
             guardarMeta(metaMensual);
-
-
-
             Toast.makeText(this, "INFORMACIÓN ALMACENADA", Toast.LENGTH_LONG).show();
+
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Por favor ingresa un número válido", Toast.LENGTH_SHORT).show();
         }
@@ -115,17 +112,10 @@ public class MetasActivity extends AppCompatActivity {
     private void guardarMeta(float meta) {
 
         try {
-
-
             SharedPreferences pref = getSharedPreferences("MetaMensual", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = pref.edit();
             editor.putFloat("Meta", meta);
             editor.apply();
-
-            lbldistanciarecorrida.setText( "0 /"+meta + " km");
-
-
-
 
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "Error al almacenar Meta mensual", Toast.LENGTH_LONG).show();
@@ -133,10 +123,12 @@ public class MetasActivity extends AppCompatActivity {
         }
     }
 
+    private void MostrarMeta(){
+        SharedPreferences prefe = getSharedPreferences("MetaMensual", MODE_PRIVATE);
+        float meta = prefe.getFloat("Meta", 0);
+        float distanciaRecorrida = prefe.getFloat("DistanciaRecorrida", 0);
 
-
-
-
-
+        lbldistanciarecorrida.setText(String.format("%.2f / %.2f km", distanciaRecorrida, meta));
+    }
 
 }

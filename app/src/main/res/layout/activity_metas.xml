@@ -93,7 +93,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="200dp"
-                        android:text="0/50 km"
                         android:textColor="#555555"
                         android:textSize="16sp"
 
@@ -168,8 +167,7 @@
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edittext_personalizado"
                     android:contentDescription="Campo para ingresar distancia objetivo"
-
-                    android:hint="50"
+                    android:hint="00"
                     android:gravity="center"
                     android:inputType="number"
 

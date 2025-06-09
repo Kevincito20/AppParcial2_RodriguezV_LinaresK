@@ -84,7 +84,7 @@
                     android:textColor="@android:color/black"/>
 
                 <TextView
-                    android:id="@+id/tvProgressKm"
+                    android:id="@+id/lblDistanciaMeta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"

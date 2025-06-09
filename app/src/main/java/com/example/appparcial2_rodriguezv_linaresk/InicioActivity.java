@@ -10,7 +10,7 @@ import com.example.appparcial2_rodriguezv_linaresk.reutilizable.Utilidades;
 
 public class InicioActivity extends AppCompatActivity {
 
-    TextView lblNombre;
+    TextView lblNombre, lblDistanciaMeta;
     RelativeLayout btnRegistrar, btnHistorial, btnMetas, btnFrases;
 
     @Override
@@ -27,6 +27,7 @@ public class InicioActivity extends AppCompatActivity {
     }
 
     private void InicializarControles(){
+        lblDistanciaMeta = findViewById(R.id.lblDistanciaMeta);
         lblNombre = findViewById(R.id.lblNombreUsuario);
         btnRegistrar = findViewById(R.id.btnRegistrarEntrenamiento);
         btnFrases = findViewById(R.id.btnFrases);
@@ -36,6 +37,12 @@ public class InicioActivity extends AppCompatActivity {
     private void MapearNombre(){
         SharedPreferences pref = getSharedPreferences("Usuario", MODE_PRIVATE);
         lblNombre.setText(pref.getString("nombre", ""));
+
+        SharedPreferences prefe = getSharedPreferences("MetaMensual", MODE_PRIVATE);
+        float meta = prefe.getFloat("Meta", 0);
+        float distanciaRecorrida = prefe.getFloat("DistanciaRecorrida", 0);
+
+        lblDistanciaMeta.setText(String.format("%.2f / %.2f km", distanciaRecorrida, meta));
     }
     public void cambiarPantalla(){
         Utilidades.Botones(btnRegistrar,this,RegistrarEntrenamientoActivity.class);

@@ -1,5 +1,6 @@
 package com.example.appparcial2_rodriguezv_linaresk;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -91,15 +92,19 @@ public class HistorialActivity extends AppCompatActivity {
 
     private void MostrarEstadisticasGenerales() {
         int totalEntrenamientos = 0;
-        double totalKm = 0;
+        Float totalKm = 0f;;
         double totalMin = 0;
 
         for (Entrenamiento ent : entrenamientos) {
             totalEntrenamientos++;
 
             try {
-                double km = Double.parseDouble(ent.getDistancia());
+                Float km = Float.parseFloat(ent.getDistancia());
                 totalKm += km;
+                SharedPreferences pref = getSharedPreferences("MetaMensual", MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putFloat("DistanciaRecorrida", totalKm);
+                editor.apply();
 
                 double min = Double.parseDouble(ent.getTiempo());
                 totalMin += min;
@@ -115,8 +120,6 @@ public class HistorialActivity extends AppCompatActivity {
         lblRitmoPromedio.setText(String.format("%.2f", promedioMinPorKm));
 
     }
-
-
 
 
 }
