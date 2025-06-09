@@ -33,18 +33,15 @@ public class InicioActivity extends AppCompatActivity {
         btnHistorial= findViewById(R.id.btnHistorial);
         btnMetas= findViewById(R.id.btnMetas);
     }
-
     private void MapearNombre(){
         SharedPreferences pref = getSharedPreferences("Usuario", MODE_PRIVATE);
         lblNombre.setText(pref.getString("nombre", ""));
     }
-
     public void cambiarPantalla(){
         Utilidades.Botones(btnRegistrar,this,RegistrarEntrenamientoActivity.class);
         Utilidades.Botones(btnFrases,this,FrasesActivity.class);
         Utilidades.Botones(btnHistorial,this,HistorialActivity.class);
         Utilidades.Botones(btnMetas,this,MetasActivity.class);
     }
-
 
 }

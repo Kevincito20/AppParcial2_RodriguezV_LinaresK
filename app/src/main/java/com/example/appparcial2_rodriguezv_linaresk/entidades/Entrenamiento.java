@@ -6,12 +6,15 @@ public class Entrenamiento {
     private String tiempo;
     private String fecha;
     private String tipoEntrenamiento;
+    private String ritmoPromedio;
 
-    public Entrenamiento(String distancia, String tiempo, String fecha, String tipoEntrenamiento) {
+
+    public Entrenamiento(String distancia, String tiempo, String fecha, String tipoEntrenamiento, String ritmoPromedio) {
         this.distancia = distancia;
         this.tiempo = tiempo;
         this.fecha = fecha;
         this.tipoEntrenamiento = tipoEntrenamiento;
+        this.ritmoPromedio = ritmoPromedio;
     }
 
     public String getTipoEntrenamiento() {
@@ -44,5 +47,12 @@ public class Entrenamiento {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+    public String getRitmoPromedio() {
+        return ritmoPromedio;
+    }
+
+    public void setRitmoPromedio(String ritmoPromedio) {
+        this.ritmoPromedio = ritmoPromedio;
     }
 }

@@ -43,7 +43,7 @@ public class RegistrarEntrenamientoActivity extends AppCompatActivity {
     }
 
     private void InicicializarControles(){
-        txtDistancia = findViewById(R.id.txtDistanciaRecorridaEntrenamiento);
+        txtDistancia = findViewById(R.id.txtDistanciaRecorrida);
         txtTiempo = findViewById(R.id.txtTiempoEntrenamiento);
         spnTipoEntrenamiento = findViewById(R.id.spnTipoEntrenamiento);
         this.llenarSpinner();
@@ -66,20 +66,26 @@ public class RegistrarEntrenamientoActivity extends AppCompatActivity {
     }
 
     public void GuardarEntrenamiento(View v){
+        String distancia = txtDistancia.getText().toString();
+        String tiempo = txtTiempo.getText().toString();
+        String ritmo = calcularRitmo(distancia,tiempo);
+
         Entrenamiento entrenamiento = new Entrenamiento(
-                txtDistancia.getText().toString(),
-                txtTiempo.getText().toString(),
+                distancia,
+                tiempo,
                 obtenerFecha(),
-                spnTipoEntrenamiento.getSelectedItem().toString()
+                spnTipoEntrenamiento.getSelectedItem().toString(),
+                ritmo
         );
 
         Toast.makeText(getApplicationContext(),"Entrenamiento Guardado Correctamente", Toast.LENGTH_LONG).show();
         Intent i = new Intent(getApplicationContext(),InicioActivity.class);
         CrearArchivo(
-                entrenamiento.getFecha() + "|" +
-                        entrenamiento.getTipoEntrenamiento() + "|" +
-                        entrenamiento.getTiempo() + "|" +
-                        entrenamiento.getDistancia()
+                entrenamiento.getTipoEntrenamiento() + " | " +
+                        entrenamiento.getDistancia() + " | " +
+                        entrenamiento.getTiempo() + " | " +
+                        entrenamiento.getFecha() + " | " +
+                        entrenamiento.getRitmoPromedio()
         );
 
 
@@ -122,5 +128,20 @@ public class RegistrarEntrenamientoActivity extends AppCompatActivity {
         return lectura;
 
     }
+
+    private String calcularRitmo(String distancia, String tiempo) {
+        try {
+            double km = Double.parseDouble(distancia);
+            double min = Double.parseDouble(tiempo);
+            if (km > 0) {
+                double ritmo = min / km;
+                return String.format("%.2f", ritmo);
+            }
+        } catch (NumberFormatException e) {
+           e.getMessage();
+        }
+        return "NADA";
+    }
+
 
 }

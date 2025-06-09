@@ -15,16 +15,12 @@ public class Utilidades {
             imgVolver.setOnClickListener(v -> activity.finish());
         }
     }
-
-    public static void mostrarToast(Context context, String mensaje) {
-        Toast.makeText(context, mensaje, Toast.LENGTH_SHORT).show();
-    }
-
     public static void Botones(RelativeLayout boton, Context contexto, Class<?> destino) {
         boton.setOnClickListener(v -> {
             Intent intent = new Intent(contexto, destino);
             contexto.startActivity(intent);
         });
     }
+
 
 }

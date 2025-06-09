@@ -42,6 +42,13 @@ public class EntrenamientosListviewAdapter extends ArrayAdapter<Entrenamiento> {
         TextView lblTiempo = item.findViewById(R.id.lbltiempo);
         lblTiempo.setText(entrenamientos.get(position).getTiempo());
 
+        TextView lblRitmoPromedio = item.findViewById(R.id.lblritmo);
+        lblRitmoPromedio.setText(entrenamientos.get(position).getRitmoPromedio());
+
+        TextView lblRitmoProm = item.findViewById(R.id.lblRitmoE);
+        lblRitmoProm.setText(entrenamientos.get(position).getRitmoPromedio());
+
+
         return item;
     }
 }
